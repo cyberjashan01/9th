@@ -1,0 +1,6 @@
+students = ("John", "Alice", "Robert", "Sophia")
+search_student = "Alice"
+if search_student in students:
+    print(f"{search_student} is enrolled.")
+else:
+    print(f"{search_student} is not enrolled.")
