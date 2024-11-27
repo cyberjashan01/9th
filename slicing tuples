@@ -1,0 +1,5 @@
+students = ("John", "Alice", "Robert", "Sophia", "Michael")
+first_three = students[:3]  
+print("First 3 Students:")
+print(first_three)
+print(f"Total number of students: {len(students)}")
