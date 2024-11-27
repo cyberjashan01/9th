@@ -1,0 +1,7 @@
+colors = ["Red", "Blue", "Green", "Red", "Yellow", "Blue"]
+unique_colors = list(set(colors))
+new_colors = ["Purple", "Orange", "Red"]  # "Red" already exists
+for color in new_colors:
+    if color not in unique_colors:
+        unique_colors.append(color)
+print("Unique Colors List:", unique_colors)
