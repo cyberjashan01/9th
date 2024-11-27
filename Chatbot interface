@@ -1,0 +1,28 @@
+import tkinter as tk
+def send_message():
+    user_message = user_input.get() 
+    chat_history.insert(tk.END, f"You: {user_message}\n")  
+  
+    responses = {
+        "hi": "Hello! How can I assist you today?",
+        "hello": "Hi there! What can I do for you?",
+        "how are you": "I'm just a program, but I'm doing fine. How about you?",
+        "your name": "I'm Chatbot, your virtual assistant.",
+        "bye": "Goodbye! Have a great day!",
+    }
+
+    user_message_lower = user_message.lower()
+    chatbot_response = responses.get(user_message_lower, "I'm sorry, I don't understand that.")
+    chat_history.insert(tk.END, f"Chatbot: {chatbot_response}\n")  
+
+    user_input.delete(0, tk.END)
+app = tk.Tk()
+app.title("Chatbot")
+app.geometry("400x500")
+chat_history = tk.Text(app, bg="lightgray", fg="black", font=("Arial", 12), wrap=tk.WORD)
+chat_history.pack(pady=10, padx=10, fill=tk.BOTH, expand=True)
+user_input = tk.Entry(app, bg="white", fg="black", font=("Arial", 12))
+user_input.pack(pady=5, padx=10, fill=tk.X)
+send_button = tk.Button(app, text="Send", bg="blue", fg="white", font=("Arial", 12), command=send_message)
+send_button.pack(pady=5)
+app.mainloop()
